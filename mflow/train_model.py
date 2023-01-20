@@ -290,19 +290,19 @@ def train():
         tr.print_summary()
 
          # Save the model checkpoints
-         save_epochs = args.save_epochs
-         if save_epochs == -1:
-             save_epochs = args.max_epochs
-         if (epoch + 1) % save_epochs == 0:
-             if multigpu:
+        save_epochs = args.save_epochs
+        if save_epochs == -1:
+            save_epochs = args.max_epochs
+        if (epoch + 1) % save_epochs == 0:
+            if multigpu:
                  torch.save(model.module.state_dict(), os.path.join(
                  args.save_dir, 'model_snapshot_epoch_{}'.format(epoch + 1)))
-             else:
+            else:
                  torch.save(model.state_dict(), os.path.join(
                  args.save_dir, 'model_snapshot_epoch_{}'.format(epoch + 1)))
-             tr.end()
+            tr.end()
 
-     print("[Training Ends], Start at {}, End at {}".format(time.ctime(start), time.ctime()))
+    print("[Training Ends], Start at {}, End at {}".format(time.ctime(start), time.ctime()))
 #     print('totally {} seconds '.format(time.time()-start))
 #     print('{} seconds per epoch'.format((time.time()-start)/args.max_epochs))
 #     print(uniques)
