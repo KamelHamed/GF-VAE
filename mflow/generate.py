@@ -582,11 +582,6 @@ if __name__ == "__main__":
     abs_unique_ratio = []
     abs_novel_ratio = []
     
-    valid_ratio_gf = []
-    unique_ratio_gf = []
-    novel_ratio_gf = []
-    abs_unique_ratio_gf = []
-    abs_novel_ratio_gf = []
 #     generated = []
 #     while len(generated) < batch_size:
 #         adj, x = generate_mols(model, batch_size=batch_size, true_adj=None, temp=args.temperature,
@@ -648,7 +643,7 @@ if __name__ == "__main__":
           format(np.mean(abs_unique_ratio), np.std(abs_unique_ratio),
                                                                  abs_unique_ratio))
     print('Task random generation done! Time {:.2f} seconds, Data: {}'.format(time.time() - start, time.ctime()))
-plt.plot ( valid_ratio_gf, [1 for i in len(valid_ratio_gf)])
+plt.plot ( valid_ratio, [1 for i in len(valid_ratio)])
     
     
 # generation    
