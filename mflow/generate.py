@@ -581,6 +581,7 @@ if __name__ == "__main__":
     novel_ratio = []
     abs_unique_ratio = []
     abs_novel_ratio = []
+    plt.plot ( valid_ratio, [1 for i in len(valid_ratio)])
     
 #     generated = []
 #     while len(generated) < batch_size:
